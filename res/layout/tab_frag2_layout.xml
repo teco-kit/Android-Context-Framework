@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2013 Karlsruhe Institute of Technology. This Work has been partially supported by the EIT ICT Labs funded research project Towards a Mobile Cloud (activity CLD 12206).
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+    http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#F1F1F1"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp" >
+
+    <Spinner
+        android:id="@+id/spinner_activities_training"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/buttonTrain"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner_activities_training"
+        android:layout_marginTop="10dp"
+        android:onClick="toggleTraining"
+        android:text="@string/button_start_recording" />
+
+    <Button
+        android:id="@+id/buttonTrainClassifier"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonTrain"
+        android:layout_below="@+id/buttonTrain"
+        android:layout_marginTop="20dp"
+        android:onClick="trainClassifier"
+        android:text="Train" />
+
+    <Button
+        android:id="@+id/buttonResetRecordedData"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonTrainClassifier"
+        android:layout_alignBottom="@+id/buttonTrainClassifier"
+        android:layout_alignRight="@+id/spinner_activities_training"
+        android:onClick="resetRecordedData"
+        android:text="Reset Data" />
+
+    <Button
+        android:id="@+id/buttonTrainFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonTrainClassifier"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:onClick="trainFromFile"
+        android:text="@string/button_train_file" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/buttonTrainFile"
+        android:layout_alignLeft="@+id/buttonTrainFile"
+        android:layout_marginBottom="40dp"
+        android:background="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/view1"
+        android:layout_alignTop="@+id/view1"
+        android:layout_marginTop="5dp"
+        android:text="This replaces the configuration and training step."
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>
